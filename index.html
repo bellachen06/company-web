@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業品牌服務｜未來數位實驗室</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c5ce7; /* 夢幻紫 */
+            --accent: #00cec9;  /* 電光藍 */
+            --highlight: #55efc4; /* 螢光綠 */
+            --bg-dark: #2d3436;
+            --text-light: #f4f7f6;
+        }
+        body { margin: 0; font-family: 'Noto Sans TC', sans-serif; color: #333; line-height: 1.6; background-color: #fff; }
+        
+        /* 主視覺區 - 霓虹光影 */
+        .hero {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(108, 92, 231, 0.3) 0px, transparent 50%),
+                radial-gradient(at 90% 90%, rgba(0, 206, 201, 0.3) 0px, transparent 50%);
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%; height: 200%;
+            background: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 10px);
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        .hero-content { z-index: 10; }
+        .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 10px; color: var(--accent); text-shadow: 0 0 15px var(--accent); }
+        .hero p { font-size: 1.3rem; opacity: 0.8; margin-bottom: 40px; }
+        .cta-btn {
+            background: transparent;
+            color: var(--highlight);
+            padding: 15px 45px;
+            text-decoration: none;
+            border: 2px solid var(--highlight);
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .cta-btn:hover { background: var(--highlight); color: var(--bg-dark); box-shadow: 0 0 20px var(--highlight); }
+
+        /* 特色區 - 極簡大膽 */
+        .features { padding: 100px 20px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .feature-card { padding: 40px; border: 1px solid #eee; transition: 0.3s; position: relative; overflow: hidden; }
+        .feature-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .feature-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 5px; background: var(--primary); transform: scaleX(0); transition: 0.3s; }
+        .feature-card:hover::after { transform: scaleX(1); }
+        .icon { font-size: 3.5rem; margin-bottom: 20px; display: block; color: var(--primary); }
+
+        /* 定價表 - 霓虹邊框 */
+        .pricing { padding: 100px 20px; background-color: var(--bg-dark); color: var(--text-light); text-align: center; }
+        .price-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px; }
+        .price-card { border: 1px solid rgba(255,255,255,0.1); padding: 50px; width: 300px; transition: 0.3s; }
+        .price-card.hot { border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(0, 206, 201, 0.2); }
+        .price-card h4 { margin: 0; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+        .price-amount { font-size: 3rem; font-weight: 900; margin: 25px 0; color: var(--accent); }
+
+        /* 客戶推薦 */
+        .testimonial { padding: 80px 20px; text-align: center; font-family: serif; font-style: italic; font-size: 1.8rem; color: var(--primary); }
+        
+        footer { padding: 50px; text-align: center; font-size: 0.9rem; color: #bbb; background-color: #1a1a1a; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>數位・實驗・未來</h1>
+            <p>打破常規，我們用代碼與美學重構您的企業資產</p>
+            <a href="#pricing" class="cta-btn">啟動方案</a>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="grid">
+            <div class="feature-card">
+                <span class="icon">🧬</span>
+                <h3>美學基因</h3>
+                <p>我們不只設計網頁，我們在編織品牌的數位靈魂。</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🚀</span>
+                <h3>效能引擎</h3>
+                <p>拒絕冗餘，用最簡潔的代碼實現跑車級的載入速度。</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">📡</span>
+                <h3>未來連接</h3>
+                <p>不僅滿足現在，更為未來的區塊鏈與 Web3.0 預留介面。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <h2>實驗方案</h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <h4>初級實驗</h4>
+                <div class="price-amount">$9.9</div>
+                <p>適合個人創作者</p>
+            </div>
+            <div class="price-card hot">
+                <h4>核心實驗</h4>
+                <div class="price-amount">$49.9</div>
+                <p>新創團隊首選</p>
+            </div>
+            <div class="price-card">
+                <h4>究極實驗</h4>
+                <div class="price-amount">$199.9</div>
+                <p>跨國集團定制</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <p>「這是我見過最具未來感的設計團隊，他們把代碼變成了藝術。」</p>
+        <p style="margin-top:20px; font-family:sans-serif; font-style:normal; font-size:1rem;">— 未來藝術家 林小姐</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 未來數位實驗室｜專業網頁設計作業</p>
+    </footer>
+
+</body>
+</html>
